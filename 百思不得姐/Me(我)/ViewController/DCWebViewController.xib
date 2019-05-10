@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DCWebViewController">
+            <connections>
+                <outlet property="backItem" destination="QJj-WV-hLP" id="teu-6D-Q9E"/>
+                <outlet property="forwardItem" destination="4fk-74-DCV" id="VE1-dq-Tw2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="qLl-ks-ePb" id="wjr-Rm-B4z"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLl-ks-ePb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="sg7-Zc-eT7"/>
+                    </connections>
+                </webView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wlb-yv-eUe">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <items>
+                        <barButtonItem enabled="NO" title="Item" image="向左" id="QJj-WV-hLP">
+                            <connections>
+                                <action selector="back" destination="-1" id="1fY-g3-ODo"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem enabled="NO" title="Item" image="向右" id="4fk-74-DCV">
+                            <connections>
+                                <action selector="forward" destination="-1" id="LpA-Nr-EJS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1uy-eY-gg2"/>
+                        <barButtonItem systemItem="refresh" id="OCF-Iz-MxU">
+                            <connections>
+                                <action selector="reload" destination="-1" id="VKF-sp-vrj"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Wlb-yv-eUe" firstAttribute="top" secondItem="qLl-ks-ePb" secondAttribute="bottom" id="2tI-KS-0YI"/>
+                <constraint firstAttribute="bottom" secondItem="Wlb-yv-eUe" secondAttribute="bottom" id="9f1-cn-PBg"/>
+                <constraint firstItem="qLl-ks-ePb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UrZ-gY-0Lg"/>
+                <constraint firstItem="qLl-ks-ePb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="drY-QT-pjX"/>
+                <constraint firstAttribute="trailing" secondItem="qLl-ks-ePb" secondAttribute="trailing" id="fq0-Gj-1cr"/>
+                <constraint firstAttribute="trailing" secondItem="Wlb-yv-eUe" secondAttribute="trailing" id="hCg-pq-68w"/>
+                <constraint firstItem="Wlb-yv-eUe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w38-eQ-4UH"/>
+            </constraints>
+            <point key="canvasLocation" x="-1946" y="-53"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="向右" width="30" height="30"/>
+        <image name="向左" width="30" height="30"/>
+    </resources>
+</document>
